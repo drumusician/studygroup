@@ -1,34 +1,37 @@
 defmodule Workshop.Exercise.DeterminePairCheck do
   use Workshop.Validator
   use ExUnit.Case
-  import Pair
 
-  test "one pair" do
-    assert(determine_pair(one_pair))
+  verify "one pair" do
+    (Pair.determine_pair(one_pair) == true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "straight has no pair" do
-    refute(determine_pair(straight))
+  verify "one pair separated should be valid" do
+    (Pair.determine_pair(one_pair_separated) == true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "two pairs has a pair" do
-    assert(determine_pair(two_pairs))
+  verify "straight has no pair" do
+    (Pair.determine_pair(straight) != true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "full house has no pair" do
-    assert(determine_pair(full_house))
+  verify "two pairs has a pair" do
+    (Pair.determine_pair(two_pairs) == true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "something has no pair" do
-    refute(determine_pair(something))
+  verify "full house has a pair" do
+    (Pair.determine_pair(full_house) == true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "four of kind has a pair" do
-    assert(determine_pair(four_of_kind))
+  verify "something has no pair" do
+    (Pair.determine_pair(something) != true && :ok) || {:error, "One Pair failed to validate"}
   end
 
-  test "three of kind has a pair" do
-    assert(determine_pair(three_of_kind))
+  verify "four of kind has a pair" do
+    (Pair.determine_pair(four_of_kind) == true && :ok) || {:error, "One Pair failed to validate"}
+  end
+
+  verify "three of kind has a pair" do
+    (Pair.determine_pair(three_of_kind) == true && :ok) || {:error, "One Pair failed to validate"}
   end
 
   defp four_of_kind do
@@ -55,11 +58,15 @@ defmodule Workshop.Exercise.DeterminePairCheck do
     [ [:hearts, 5], [:spades, 5], [:diamonds, 6], [:clubs, :ace], [:hearts, 7] ]
   end
 
+  defp one_pair_separated do
+    [ [:hearts, 5], [:hearts, 7], [:diamonds, 6], [:clubs, :ace], [:spades, 5] ]
+  end
+
   defp something do
     [ [:hearts, 5], [:spades, 4], [:diamonds, 6], [:clubs, :jack], [:hearts, 7] ]
   end
 
-#  verify "all tests pass" do
-#    ((%{failures: 0} = ExUnit.run) && :ok) || ExUnit.start && {:error, "Some tests have failed"}
-#  end
+ # verify "all tests pass" do
+ #   ((%{failures: 0} = ExUnit.run) && :ok) || ExUnit.start && {:error, "Some tests have failed"}
+ # end
 end

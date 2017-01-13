@@ -2,10 +2,13 @@ defmodule Pair do
 
   # One pair
   @spec determine_pair(list) :: boolean
-  def determine_pair([[_, a], [_, a], _, _, _]), do: true
-  def determine_pair([_, [_, a], [_, a], _, _]), do: true
-  def determine_pair([_, _, [_, a], [_, a], _]), do: true
-  def determine_pair([_, _, _, [_, a], [_, a]]), do: true
-
-  def determine_pair(_), do: false
+  def determine_pair(list) do
+    new_list = Enum.uniq_by(list, fn [_, x] -> x end)
+    cond do
+      length(new_list) < 5 ->
+        true
+      true ->
+        false
+    end
+  end
 end
