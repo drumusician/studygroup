@@ -8,9 +8,9 @@ defmodule Workshop.Exercise.FirstExercise do
   # given `@task`.
   @description """
   Write a FizzBuzz program without if/unless/case etc. The FizzBuzz program
-  outputs numbers 1 - 100. Each number which can be divided by 5 should be
-  replaced by "fizz", each multiple number of 3 should be replaced by "buzz"
-  and each number which can be divided by both should be replace by "fizzbuzz"
+  outputs numbers 1 - 100. Each number that is divisible by 3 should be
+  replaced by "Fizz", each number divisible by 5 should be replaced by "Buzz"
+  and each number that is divisible by both should be replace by "FizzBuzz"
 
   # What's next?
   Get the task for this exercise by executing `mix workshop.task`. When you are
@@ -26,9 +26,9 @@ defmodule Workshop.Exercise.FirstExercise do
 
   @task """
   Write a FizzBuzz program without if/unless/case etc. The FizzBuzz program
-  outputs numbers 1 - 100. Each number which can be divided by 5 should be
-  replaced by "fizz", each multiple number of 3 should be replaced by "buzz"
-  and each number which can be divided by both should be replace by "fizzbuzz"
+  outputs numbers 1 - 100. Each number that is divisible by 3 should be
+  replaced by "Fizz", each number divisible by 5 should be replaced by "Buzz"
+  and each number that is divisible by both should be replace by "FizzBuzz"
   """
 
   @hint [

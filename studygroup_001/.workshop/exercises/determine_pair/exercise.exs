@@ -8,7 +8,7 @@ defmodule Workshop.Exercise.DeterminePair do
   # given `@task`.
   @description """
   Complete the function determine_pair, which will return a boolean, determining
-  if the hand of 5 cards does include a pair (two cards of samen number).
+  if the hand of 5 cards does include a pair (two cards of same number).
 
   # What's next?
   Get the task for this exercise by executing `mix workshop.task`. When you are

@@ -10,7 +10,8 @@ defmodule Workshop.Exercise.Arrange do
   The sliced veggies & meat dices have to be arranged so next person can quickly
   combine them into a delicious high cuisine item. Implement arrange function which
   given a list of (unarranged) :vegetable_slices and :meat_dices arranges them alternately
-  starting with a :vegetable_slice
+  starting with a :vegetable_slice. You can assume that for this exercise the list
+  will have an equal number of meat_dice and vegetable_slices.
 
   # What's next?
   Take a look into arranger.exs and implement missing stuff. When you are
@@ -27,7 +28,9 @@ defmodule Workshop.Exercise.Arrange do
   @task """
   Implement arrange function which
   given a list of (unarranged) :vegetable_slices and :meat_dices arranges them alternately
-  starting with a :vegetable_slice
+  starting with a :vegetable_slice.
+  You can assume that for this exercise the list
+  will have an equal number of meat_dice and vegetable_slices.
   """
 
   @hint [

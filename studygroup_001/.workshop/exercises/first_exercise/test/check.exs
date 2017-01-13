@@ -7,14 +7,14 @@ defmodule Workshop.Exercise.FirstExerciseCheck do
   end
 
   verify "verify FizzBuzz.translate(5)" do
-    (FizzBuzz.translate(5) == "fizz" && :ok) || {:error, "FizzBuzz.translate(5) == 'fizz', got #{FizzBuzz.translate(5)} "}
+    (FizzBuzz.translate(5) == "Buzz" && :ok) || {:error, "FizzBuzz.translate(5) == 'Buzz', got #{FizzBuzz.translate(5)} "}
   end
 
   verify "verify FizzBuzz.translate(3)" do
-    (FizzBuzz.translate(3) == "buzz" && :ok) || {:error, "FizzBuzz.translate(3) == 'buzz' expected, got #{FizzBuzz.translate(3)}"}
+    (FizzBuzz.translate(3) == "Fizz" && :ok) || {:error, "FizzBuzz.translate(3) == 'Fizz' expected, got #{FizzBuzz.translate(3)}"}
   end
 
   verify "verify FizzBuzz.translate(45)" do
-    (FizzBuzz.translate(45) == "fizzbuzz" && :ok) || {:error, "FizzBuzz.translate(45) 'fizzbuzz' expected, got #{FizzBuzz.translate(45)}"}
+    (FizzBuzz.translate(45) == "FizzBuzz" && :ok) || {:error, "FizzBuzz.translate(45) 'FizzBuzz' expected, got #{FizzBuzz.translate(45)}"}
   end
 end
